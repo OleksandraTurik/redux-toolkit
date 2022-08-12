@@ -18,9 +18,7 @@ export const filmsSlice = createSlice({
   reducers: {},
 
   extraReducers: (builder) => {
-    // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchFilm.fulfilled, (state, action) => {
-      // Add user to the state array
       state.films = action.payload;
       state.loading = false;
       state.error = "";
@@ -36,7 +34,6 @@ export const filmsSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { increment, decrement } = filmsSlice.actions;
 
 export default filmsSlice.reducer;
